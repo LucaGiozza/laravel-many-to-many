@@ -58,7 +58,30 @@
      <textarea class="form-control @error('content') is-invalid @enderror" name="content" id="desc" cols="30" rows="10">{{old('content')}}</textarea>
      
   </div>
+  <!-- div per i tag -->
+
+  <div class="mb-3">
+  <h4>Tag</h4>
+    @foreach($tags as $tag)
+    <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+  <input type="checkbox" class="btn-check" id="tag{{$loop->iteration}}" autocomplete="off" value="{{$tag->id}}">
+  <label class="btn btn-outline-primary" for="tag{{$loop->iteration}}">{{$tag->name}}</label>
+  
+ 
+</div>
+@endforeach
+
+
+    
+    
+
+  </div>
+  <div>
+  
   <button type="submit" class="btn btn-primary">Submit</button>
+
+  </div>
+  
 </form>
 </div>
 @endsection
