@@ -64,7 +64,7 @@
   <h4>Tag</h4>
     @foreach($tags as $tag)
     <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-  <input type="checkbox" class="btn-check" id="tag{{$loop->iteration}}" autocomplete="off" value="{{$tag->id}}">
+  <input type="checkbox" class="btn-check" id="tag{{$loop->iteration}}" autocomplete="off" value="{{$tag->id}}" name="tags[]">
   <label class="btn btn-outline-primary" for="tag{{$loop->iteration}}">{{$tag->name}}</label>
   
  

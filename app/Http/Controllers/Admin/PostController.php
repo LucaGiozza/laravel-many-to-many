@@ -84,16 +84,26 @@ class PostController extends Controller
 
         }
 
+       $new_post->slug = $slug;
 
-
-
-
-        $new_post->slug = $slug;
        $new_post ->fill($data);
 
         // salvare i dati
 
         $new_post->save();
+
+        // salvare i dati nella cartella ponte
+
+        // controllo se l'utente non sta inserendo tag
+
+        if(array_key_exists('tags',$data)){
+            $new_post->tags()->attach($data['tags']);
+
+        }
+
+        
+
+
 
         return redirect()->route('admin.posts.index');
     }
